@@ -15,7 +15,7 @@ export const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     if (config.method === "get") {
-      config.signal = newAbortSignal(5000);
+      config.signal = newAbortSignal(15000);
     }
     if (String(config.headers.Authorization).toLowerCase() !== "basic") {
       let user_info: any = localStorage.getItem("user");
